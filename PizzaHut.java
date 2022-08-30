@@ -27,13 +27,13 @@ public class PizzaHut extends Pizza{
     }
 
     @Override
-    public Integer calculateRangedRank(Long range) { // range = 3
+    public Integer calculateRangedRank(Long range) {
         if(super.getNumberOfEmployees() > 0 ){
-            LocalDate currentDate = LocalDate.now(); // 29.08
-            LocalDate validateDate = currentDate.minusDays(range); // 26.08
+            LocalDate currentDate = LocalDate.now();
+            LocalDate validateDate = currentDate.minusDays(range);
 
             for(Employee employee : super.getEmployees()){
-                if(validateDate.isAfter(employee.getRankDate())){ // if (emplaye rank date < 26.08)
+                if(validateDate.isAfter(employee.getRankDate())){
                     employee.setRank();
                 }
             }
